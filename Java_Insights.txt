@@ -1,0 +1,151 @@
+OOPS 
+
+Inheritance,Encapsulation,Abstraction-detailed understanding
+polymorphism - 
+	upcasting, downcasting
+	Interfaces, Abstract classes- differences
+	Method overloading/overiding
+	Constructor overloading/overriding
+hashcode(), equals() and toString() methods-infer
+
+=================================================================
+
+Java 8 - Functional Interfaces - Java Brains
+		- what it is - what is the need(not required to create anonymous class)
+		- abstract method(1) and 0/many static and 0/many default methods
+		- can you override static and default methods of a functional interface?
+		- is the static method of the interface hidden? - Understand this concept of method hiding.
+	- how to define lambda expression for functional interface - Advantages of lambdas
+		- is the lambda expression {} required for all scenarios? 
+		- is return keyword required for all scenarios?
+	Method references- 4 types - static, class, constructor - brief overview
+	Streams - how to create a stream on any collection?
+		- what is diff betn stream and collection
+		- Stream -> filter, map, reduce methods - explore this - (Stream-once used, cannot be used again)
+			Eg: 
+			Scenario: for the arraylist{1,2,3,4}, compute the square of each numbers:
+				=> streamed value is {1,4,9,16} 
+				- base Data Structure is not affected though the values are modified in stream
+		- Understand lazy evaluation concept in Streams
+		-
+		 IntStream - {avg, min, max, abs, sum} - summaryStatistics() - all 5 function's o/p is achieved in this one method of IntStream.
+		 What is Consumer interface - Eg of functional interface
+		 what is predicate?
+
+==================================================================
+
+JAVA - 
+
+JVM JDK JRE Basics with stack and heap memory understanding
+
+Multithreading - with realtime
+	how to create thread -(extending thread, implementing runnable interface)
+		- when do you go to choose extending or implementing the thread
+			 when we already have a class extending another class then we go to implement the runnable interface as we don't have multiple inheritance in JAVA classes
+	Lifecycles of thread- methods of threads(wait, notify, notifyAll,sleep,start,run....)
+	@Async for asynchronous
+	What is daemon thread- how created?
+	priority of thread-(min-1, max-10, default-5)
+	Executor framework- future variable(Completable future)
+
+Concurrency & Synchronization
+	what it is, how achieved, common methods
+
+Collections
+	what is diff betn collection(Interface) and collections(Class)- deep dive into methods and usages and Collection hierarchy
+	When to choose 
+		1. arraylist,Linkedlist vector, array, 
+		HashMap, ConcurrentHashMap, hashtable
+		2. {Queue - priority q, dequeue, enqueue}
+		3. Set - linked HashSet, Sorted, TreeSet
+	4. Concurrent Modification Exception - how it occurs - how to resolve- { with ListIterator for traversing- next(), hasNext()}
+		Concurrent Hashmap - how it works internally- how only particular segment is locked for writing and not the whole collection?	
+	5. Ways a collection can be traversed/ iterated?-ForEach, ListIterator,Iterator
+	6. How hashMap works internally? 
+		"https://www.youtube.com/watch?v=CojCE-ojdGY"
+		{internally- key is stored as linkedlist- loadfactor:75%, threshold: 12 {i.e 75% of 16 = 12}, size:16 {i.e 0-15}
+
+==================================================================
+	
+DS and Common
+
+	1. Understand complexity - for all collection(Big O Notations)- Clear view on BST required
+	2. Comparable & Comparator difference - sorting of objects based on any field of the object - CompareTo and Compare methods
+	3. Serialization - why? - how to serialize all feilds or variables of an object - 
+		how to deserialize?
+		what is transient - how to not serialize specific fields in an object
+	4. How to create singleton class, read-only class , write-only class
+	5. Exception Handling - compile, runtime- try catch, finally, throw throws
+	6 . Garbage collection
+	7 . GET & POST diff - secured
+ 	8. Inheritance & Exception Handling -checked and unchecked exception in parent and child and its behaviour
+	9. String, stringbuilder, stringbuffer- methods used - Understand diff
+	10. Need for primitive datatypes and corresponding wrapper classes.
+
+==================================================================
+SPRING:
+Springboot(Creating and consuming a REST service with DB Integration)
+
+	1. What is Spring MVC?- project explanation 
+	2. Scope of beans - 5 scope - prototype, singleton, global, session, global session 
+		How to inject a bean- getter, setters, constructors
+			- with XML, Annotations
+	3. Spring factory - Xml Bean fac, Appl Bean Fac
+	4. @Profiles - Anotations, how to configure in application.properties and by creating environment variables for each profile.
+	5. Spring retry
+	6. Spring security 
+		- concepts - 	Authentication 
+				Authorization - how to configure - webSecurityConfigurerAdapter class - override methods- configure - url specific , role specific
+				Principal - current loggedin User- getUsename(), getPassowrd() ...
+				User
+				Grant - Grant authority - ...
+
+				- In memory authentication - Code usage
+		 what is JWT? Why? How it looks? - Understand from "https://jwt.io"
+				- implementation - jwt.utils - how it is validated, is token expired - how to extract user details from a token?
+				- how to pass JWT in postman
+		- OAuth - why? how it is implemented?
+				- understand client id , client secretID - use in app.properties
+				- application can single signOn to other applications using OAuth
+				-  try oAuth in postman -bearer token
+	7. Springboot is opinionated? List some dependencies used in Springboot application
+	8. Hibernate(an ORM) - Lazy loading and caching concepts in Hibernate, EH Cache
+	9. When you get some failure in Production. How do you find from which web service the failure is occurring?
+	10.Understand @primary and @qualifier in spring boot
+	11. Monitoring the application health-ELK/Actuator...
+	12. How do you change the URI end points dynamically?
+
+Springboot annotations
+HTTP Status codes - 400,401,200,201,404,415,500 
+REST API - 
+	RestTemplate - Exchange, getforEntity etc{consuming a web service}, 
+	CRUD for REST {creating a REST service}
+	
+Pipeline jenkin - create/deploy
+DevOPs - Basics
+CI/CD workflow - basics
+Version Control - Basics
+SonarLint - code enhancement techniques
+JUnit Testcase - Use Mockitos or SpringRunner classes and explore on Interfaces,classes and methods
+
+==================================================================
+
+DataBase Management:
+ACID Property, Normalization- 1NF, 2NF, 3NF …, SubQueries
+What is a transaction?,What is Query Optimization and need for indexing. 
+What is a view? Difference between View and a table. Does changes in a view update your base table? Justify
+Joins - EquiJoin, left, Right,Full Outer
+Complex query - how do you create - in real time
+Performance of a query - perf tuning technique - explain some 
+Determine cost of query - Execution Plan - how it is created? - "set autotrace  on" - explore
+							     - Without autotrace - no query o/p is generated, only execution plan is explained - Understand the advantage
+
+Analytical functions - select top(5) , rank() , denserank(),rankOver() - realtime scenarios with your project
+
+==================================================================
+Java 9, 10, 11 - REPL Jshell, Modularity, HTTP client - Brief overview
+How do you create Secured Application?
+What is SSL/TLS? how can you create an SSL Certificate? How can you use SSL certificate in your springboot application
+Understand Trust keyStore and cacerts
+
+==================================================================
